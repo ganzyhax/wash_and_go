@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/layout/custom_dialog.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/layout/notification_template_part_time.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/layout/notification_template_part_chronometer.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/layout/map_view.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-main-7:/layout/map_view.xml"
+    }
+]

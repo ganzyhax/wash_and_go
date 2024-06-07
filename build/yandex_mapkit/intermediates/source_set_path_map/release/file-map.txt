@@ -1,0 +1,16 @@
+com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-basement-18.1.0-0 /Users/macos/.gradle/caches/transforms-3/2f4c9350af6b6edec9ef1061359a50ae/transformed/jetified-play-services-basement-18.1.0/res
+com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1 /Users/macos/.gradle/caches/transforms-3/372ac40485009ab17b480d10a6d3465a/transformed/core-1.6.0/res
+com.unact.yandexmapkit.yandex_mapkit-jetified-window-java-1.0.0-beta04-2 /Users/macos/.gradle/caches/transforms-3/39c3a66c630cde5142174a727924b88d/transformed/jetified-window-java-1.0.0-beta04/res
+com.unact.yandexmapkit.yandex_mapkit-jetified-window-1.0.0-beta04-3 /Users/macos/.gradle/caches/transforms-3/bdcd4420d92c78f61b6d1a16b63d9f3f/transformed/jetified-window-1.0.0-beta04/res
+com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4 /Users/macos/.gradle/caches/transforms-3/c9e7d9efb513a8c50db2d055dd3e56db/transformed/jetified-maps.mobile-4.4.0-full/res
+com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5 /Users/macos/.gradle/caches/transforms-3/ef6c7e5ff272974b2e629ee9b1111691/transformed/jetified-play-services-base-18.1.0/res
+com.unact.yandexmapkit.yandex_mapkit-jetified-annotation-experimental-1.1.0-6 /Users/macos/.gradle/caches/transforms-3/f87f1de6a049aafc80707f0ed02bfaf8/transformed/jetified-annotation-experimental-1.1.0/res
+com.unact.yandexmapkit.yandex_mapkit-main-7 /Users/macos/.pub-cache/hosted/pub.dev/yandex_mapkit-3.4.0/android/src/main/res
+com.unact.yandexmapkit.yandex_mapkit-release-8 /Users/macos/.pub-cache/hosted/pub.dev/yandex_mapkit-3.4.0/android/src/release/res
+com.unact.yandexmapkit.yandex_mapkit-packaged_res-9 /Users/macos/wash_and_go-main/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/release
+com.unact.yandexmapkit.yandex_mapkit-pngs-10 /Users/macos/wash_and_go-main/build/yandex_mapkit/generated/res/pngs/release
+com.unact.yandexmapkit.yandex_mapkit-resValues-11 /Users/macos/wash_and_go-main/build/yandex_mapkit/generated/res/resValues/release
+com.unact.yandexmapkit.yandex_mapkit-rs-12 /Users/macos/wash_and_go-main/build/yandex_mapkit/generated/res/rs/release
+com.unact.yandexmapkit.yandex_mapkit-mergeReleaseResources-13 /Users/macos/wash_and_go-main/build/yandex_mapkit/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.unact.yandexmapkit.yandex_mapkit-mergeReleaseResources-14 /Users/macos/wash_and_go-main/build/yandex_mapkit/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.unact.yandexmapkit.yandex_mapkit-merged_res-15 /Users/macos/wash_and_go-main/build/yandex_mapkit/intermediates/merged_res/release

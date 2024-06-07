@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/mrc_uturn_arrow_clicked.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/mrc_uturn_arrow_clicked.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_icon_light_focused.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/search_layer_pin_selected_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/search_layer_pin_selected_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/search_layer_pin_empty.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/search_layer_pin_empty.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/interior.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/interior.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_icon_dark_focused.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/entry.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/entry.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_text_disabled.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/mrc_arrow.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/mrc_arrow.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_text_dark_normal.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/notification_icon_background.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1:/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_text_light_focused.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/house_marker_left.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/house_marker_left.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_text_light.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/mrc_arrow_clicked.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/mrc_arrow_clicked.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_icon_disabled.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/notification_bg_low.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/loader.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/loader.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_icon_dark_normal.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/mrc_loading_wheel.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/mrc_loading_wheel.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/house_marker_expandable.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/house_marker_expandable.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/default_line.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/default_line.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/notification_bg.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/clicked_arrow.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/clicked_arrow.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/mrc_uturn_arrow.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/mrc_uturn_arrow.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_text_light_normal.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/search_layer_advert_pin_icon_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/search_layer_advert_pin_icon_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/common_google_signin_btn_text_dark_focused.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-play-services-base-18.1.0-5:/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/arrow.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/arrow.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/search_layer_pin_icon_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/search_layer_pin_icon_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/notification_tile_bg.xml",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-core-1.6.0-1:/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/search_layer_pin_dust_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/search_layer_pin_dust_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/search_layer_advert_pin_dust_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/search_layer_advert_pin_dust_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable/house_marker_right.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable/house_marker_right.png"
+    }
+]

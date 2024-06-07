@@ -10,7 +10,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc() : super(ProfileInitial()) {
     on<ProfileEvent>((event, emit) async {
       if (event is ProfileLoad) {
-        print('loadadad');
         SharedPreferences prefs = await SharedPreferences.getInstance();
         var data = await PhoneVerification()
             .getUserFieldById(prefs.getString('id') ?? '', 'booking');

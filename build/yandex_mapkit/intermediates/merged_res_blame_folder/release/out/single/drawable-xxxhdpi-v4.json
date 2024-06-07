@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable-xxxhdpi-v4/search_layer_advert_pin_icon_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable-xxxhdpi-v4/search_layer_advert_pin_icon_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable-xxxhdpi-v4/search_layer_advert_pin_dust_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable-xxxhdpi-v4/search_layer_advert_pin_dust_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable-xxxhdpi-v4/search_layer_pin_icon_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable-xxxhdpi-v4/search_layer_pin_icon_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable-xxxhdpi-v4/search_layer_pin_selected_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable-xxxhdpi-v4/search_layer_pin_selected_default.png"
+    },
+    {
+        "merged": "com.unact.yandexmapkit.yandex_mapkit-merged_res-14:/drawable-xxxhdpi-v4/search_layer_pin_dust_default.png",
+        "source": "com.unact.yandexmapkit.yandex_mapkit-jetified-maps.mobile-4.4.0-full-4:/drawable-xxxhdpi-v4/search_layer_pin_dust_default.png"
+    }
+]

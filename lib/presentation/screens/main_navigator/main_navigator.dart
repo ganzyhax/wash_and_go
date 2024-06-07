@@ -46,7 +46,7 @@ class CustomNavigationBar extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30)),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: (state.screens.length == 4 && !kIsWeb)
+                            children: (state.isCreater == true && !kIsWeb)
                                 ? [
                                     InkWell(
                                       onTap: () {
@@ -69,7 +69,7 @@ class CustomNavigationBar extends StatelessWidget {
                                                 index: 1));
                                       },
                                       child: NavigationItem(
-                                        assetImage: Icons.search,
+                                        assetImage: Icons.add,
                                         isSelected:
                                             (state.index == 1) ? true : false,
                                       ),
@@ -82,26 +82,13 @@ class CustomNavigationBar extends StatelessWidget {
                                                 index: 2));
                                       },
                                       child: NavigationItem(
-                                        assetImage: Icons.add,
+                                        assetImage: Icons.dashboard_outlined,
                                         isSelected:
                                             (state.index == 2) ? true : false,
                                       ),
                                     ),
-                                    InkWell(
-                                      onTap: () {
-                                        BlocProvider.of<MainNavigatorBloc>(
-                                                context)
-                                            .add(MainNavigatorChangePage(
-                                                index: 3));
-                                      },
-                                      child: NavigationItem(
-                                        assetImage: Icons.dashboard_outlined,
-                                        isSelected:
-                                            (state.index == 3) ? true : false,
-                                      ),
-                                    ),
                                   ]
-                                : (!kIsWeb && state.screens.length == 3)
+                                : (!kIsWeb && state.isCreater == true)
                                     ? [
                                         InkWell(
                                           onTap: () {
@@ -147,7 +134,7 @@ class CustomNavigationBar extends StatelessWidget {
                                           ),
                                         ),
                                       ]
-                                    : (kIsWeb && state.screens.length == 3)
+                                    : (!kIsWeb && state.isCreater == false)
                                         ? [
                                             InkWell(
                                               onTap: () {

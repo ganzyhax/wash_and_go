@@ -28,13 +28,13 @@ class MainNavigatorBloc extends Bloc<MainNavigatorEvent, MainNavigatorState> {
       Container()
     ];
     int index = 0;
+    bool isCreater = false;
     on<MainNavigatorEvent>((event, emit) async {
       if (event is MainNavigatorLoad) {
-        log('Loading');
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         String washerId = await PhoneVerification()
             .getUserFieldById(prefs.getString('id') ?? '', 'washerId');
-        bool isCreater = await PhoneVerification()
+        isCreater = await PhoneVerification()
             .getUserFieldById(prefs.getString('id') ?? '', 'isCreater');
         await prefs.setBool('isCreater', isCreater);
         if (washerId != '') {
@@ -45,26 +45,22 @@ class MainNavigatorBloc extends Bloc<MainNavigatorEvent, MainNavigatorState> {
         bool isWashCreated = prefs.getBool('isWashCreated') ?? false;
 
         if (isCreater == true) {
-          log('Creater!');
           if (!kIsWeb) {
             if (isWashCreated == true) {
               screens = [
                 MapScreen(),
-                SearchScreen(),
                 BoxControllScreen(),
                 StatisticsScreen(),
               ];
             } else {
               screens = [
                 MapScreen(),
-                SearchScreen(),
                 WashCreateScreen(),
                 StatisticsScreen(),
               ];
             }
           } else {
             if (isWashCreated == true) {
-              print('asdasdas');
               screens = [
                 SearchScreen(),
                 BoxControllScreen(),
@@ -79,7 +75,6 @@ class MainNavigatorBloc extends Bloc<MainNavigatorEvent, MainNavigatorState> {
             }
           }
         } else {
-          log('Not Creater!');
           if (!kIsWeb) {
             screens = [
               MapScreen(),
@@ -93,7 +88,8 @@ class MainNavigatorBloc extends Bloc<MainNavigatorEvent, MainNavigatorState> {
             ];
           }
         }
-        emit(MainNavigatorLoaded(index: index, screens: screens));
+        emit(MainNavigatorLoaded(
+            index: index, screens: screens, isCreater: isCreater));
       }
 
       if (event is MainNavigatorChangePage) {
@@ -110,7 +106,11 @@ class MainNavigatorBloc extends Bloc<MainNavigatorEvent, MainNavigatorState> {
             ];
           }
         }
-        emit(MainNavigatorLoaded(index: index, screens: screens));
+        emit(MainNavigatorLoaded(
+          isCreater: isCreater,
+          index: index,
+          screens: screens,
+        ));
       }
     });
   }

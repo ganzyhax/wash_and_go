@@ -8,5 +8,7 @@ final class MainNavigatorInitial extends MainNavigatorState {}
 final class MainNavigatorLoaded extends MainNavigatorState {
   List screens;
   int index;
-  MainNavigatorLoaded({required this.screens, required this.index});
+  bool isCreater;
+  MainNavigatorLoaded(
+      {required this.screens, required this.index, required this.isCreater});
 }

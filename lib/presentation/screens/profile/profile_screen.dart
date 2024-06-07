@@ -1,9 +1,13 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wash_and_go/presentation/screens/login/functions/auth.dart';
 import 'package:wash_and_go/presentation/screens/login/login_screen.dart';
 import 'package:wash_and_go/presentation/screens/profile/bloc/profile_bloc.dart';
 import 'package:wash_and_go/presentation/widgets/fields/custom_textfiled.dart';
@@ -26,6 +30,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
     // TODO: implement initState
     super.initState();
     getData();
+  }
+
+  bool isDateGreaterThanOrEqualToToday(String dateString) {
+    var now = DateTime.now();
+
+    // Преобразование строки с датой в формат DateTime
+    var formatter = DateFormat('d MMMM', 'ru');
+    var date = formatter.parse(dateString);
+
+    // Установка времени на полдень (для сравнения только даты)
+    date = DateTime(date.year, date.month, date.day, 12);
+
+    // Сравнение дат
+    return !now.isBefore(date);
   }
 
   getData() async {
@@ -150,48 +168,108 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
+                            bool canCencel = isDateGreaterThanOrEqualToToday(
+                                state.data[index]['date']);
                             return Container(
                               margin: EdgeInsets.only(bottom: 15),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
                                   color: Colors.white),
-                              padding: EdgeInsets.all(15),
-                              child: Column(
+                              padding: EdgeInsets.all(10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Text('Автомойка: '),
-                                      Text(state.data[index]['washName'])
+                                      Row(
+                                        children: [
+                                          Text('Автомойка: '),
+                                          Text(state.data[index]['washName'])
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Text('Дата: '),
+                                              Text(state.data[index]['date'])
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text('Время: '),
+                                              Text(state.data[index]['time'])
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ],
                                   ),
-                                  Row(
-                                    children: [
-                                      Text('Дата: '),
-                                      Text(state.data[index]['date'])
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text('Время: '),
-                                      Text(state.data[index]['time'])
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text('Бокс: '),
-                                      Text(state.data[index]['box'])
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text('Тип: '),
-                                      Text((state.data[index]['type'] == '0'
-                                          ? 'Седан'
-                                          : state.data[index]['type'] == '1'
-                                              ? 'Кроссовер'
-                                              : 'Пикап'))
-                                    ],
-                                  ),
+                                  (canCencel == true)
+                                      ? InkWell(
+                                          onTap: () async {
+                                            var data = state.data;
+                                            data.removeAt(index);
+                                            SharedPreferences prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            await PhoneVerification()
+                                                .updateUserFieldById(
+                                                    prefs
+                                                        .getString('id')
+                                                        .toString(),
+                                                    'booking',
+                                                    data);
+                                            BlocProvider.of<ProfileBloc>(
+                                                context)
+                                              ..add(ProfileLoad());
+                                          },
+                                          child: InkWell(
+                                            onTap: () async {
+                                              var data = state.data;
+                                              data.removeAt(index);
+                                              SharedPreferences prefs =
+                                                  await SharedPreferences
+                                                      .getInstance();
+                                              await PhoneVerification()
+                                                  .updateUserFieldById(
+                                                      prefs
+                                                          .getString('id')
+                                                          .toString(),
+                                                      'booking',
+                                                      data);
+                                              BlocProvider.of<ProfileBloc>(
+                                                  context)
+                                                ..add(ProfileLoad());
+                                            },
+                                            child: Container(
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                  color:
+                                                      Colors.deepPurpleAccent),
+                                              child: Center(
+                                                child: Text(
+                                                  'Отменить\nбронь',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : SizedBox()
                                 ],
                               ),
                             );
