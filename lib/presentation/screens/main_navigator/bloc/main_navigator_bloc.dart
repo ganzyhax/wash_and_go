@@ -100,7 +100,6 @@ class MainNavigatorBloc extends Bloc<MainNavigatorEvent, MainNavigatorState> {
           if (isCreated) {
             screens = [
               MapScreen(),
-              SearchScreen(),
               BoxControllScreen(),
               StatisticsScreen(),
             ];

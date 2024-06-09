@@ -5,4 +5,5 @@ abstract class CarWasherRepository {
   Future<CarWahserEntity> getCarWasher(String id);
   Future<List<CarWahserEntity>> getCarWashers();
   Future<bool> createCarWasher(CarWahserModel model);
+  Future<bool> updateCarWasher(CarWahserModel model);
 }

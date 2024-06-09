@@ -44,16 +44,6 @@ class SearchScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(11), // Image border
-
-                    child: SizedBox.fromSize(
-                      size: Size.fromRadius(17), // Image radius
-                      child: Image.network(
-                          'https://louisville.edu/enrollmentmanagement/images/person-icon/image',
-                          fit: BoxFit.cover),
-                    ),
-                  ),
                 ],
               ),
             ),

@@ -146,7 +146,6 @@ class ControlBloc extends Bloc<ControlEvent, ControlState> {
 
           try {
             await documentReference.update({'booking': bookings});
-            print("Document successfully updated");
             type = 0;
             date = -1;
             time = -1;

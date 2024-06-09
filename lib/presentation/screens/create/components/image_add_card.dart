@@ -9,8 +9,12 @@ class ImageAddCard extends StatelessWidget {
   final bool? isLarge;
   final Function()? function;
   final image;
-  const ImageAddCard(
-      {super.key, this.isLarge = false, this.function, this.image});
+  const ImageAddCard({
+    super.key,
+    this.isLarge = false,
+    this.function,
+    this.image,
+  });
 
   @override
   Widget build(BuildContext context) {

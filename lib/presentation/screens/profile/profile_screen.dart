@@ -7,6 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wash_and_go/data/datasource/car_washer_remote_datasource.dart';
+import 'package:wash_and_go/data/model/wash_model.dart';
+import 'package:wash_and_go/data/repositories/car_washer_repository_impl.dart';
 import 'package:wash_and_go/presentation/screens/login/functions/auth.dart';
 import 'package:wash_and_go/presentation/screens/login/login_screen.dart';
 import 'package:wash_and_go/presentation/screens/profile/bloc/profile_bloc.dart';
@@ -32,18 +35,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
     getData();
   }
 
-  bool isDateGreaterThanOrEqualToToday(String dateString) {
+  bool isDateGreaterThanOrEqualToToday(String givenDate, String timeString) {
     var now = DateTime.now();
 
-    // Преобразование строки с датой в формат DateTime
-    var formatter = DateFormat('d MMMM', 'ru');
-    var date = formatter.parse(dateString);
+    // Parse the given date string
+    var dateFormatter = DateFormat('dd MMMM', 'ru');
+    var givenDateDay = dateFormatter.parse(givenDate);
 
-    // Установка времени на полдень (для сравнения только даты)
-    date = DateTime(date.year, date.month, date.day, 12);
+    // Construct the given date with today's year
+    var givenDateWithYear =
+        DateTime(now.year, givenDateDay.month, givenDateDay.day);
 
-    // Сравнение дат
-    return !now.isBefore(date);
+    // Parse the given time string
+    var timeFormatter = DateFormat('HH:mm');
+    var givenTime = timeFormatter.parse(timeString.split('-')[0]);
+
+    // Construct the given date and time
+    var givenDateTime = DateTime(
+        givenDateWithYear.year,
+        givenDateWithYear.month,
+        givenDateWithYear.day,
+        givenTime.hour,
+        givenTime.minute);
+
+    // Check if the given date and time is after the current date and time
+    return givenDateTime.isAfter(now);
   }
 
   getData() async {
@@ -54,7 +70,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         .get();
 
     if (documentSnapshot.exists) {
-      // If the document exists, you can access its data using the data() method
       Map<String, dynamic> data =
           documentSnapshot.data() as Map<String, dynamic>;
       // Access fields like this:
@@ -62,7 +77,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       print('User Email: ${data['email']}');
       name = data['name'];
       surname = data['surname'];
-      carNumber = data['carNumber'];
+      carNumber = data['carNumber'].toString().toUpperCase();
       phone = data['phone'];
       // Add other fields as needed
     } else {
@@ -130,10 +145,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600, fontSize: 18),
                               ),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 '+7' + phone,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w400, fontSize: 18),
+                              ),
+                              SizedBox(
+                                height: 5,
                               ),
                               Text(
                                 carNumber,
@@ -169,7 +190,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
                             bool canCencel = isDateGreaterThanOrEqualToToday(
-                                state.data[index]['date']);
+                                state.data[index]['date'],
+                                state.data[index]['time']);
                             return Container(
                               margin: EdgeInsets.only(bottom: 15),
                               decoration: BoxDecoration(
@@ -235,6 +257,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           },
                                           child: InkWell(
                                             onTap: () async {
+                                              CarWasherRepositoryImpl
+                                                  repository =
+                                                  CarWasherRepositoryImpl(
+                                                remoteDataSource:
+                                                    GetCarWasherRemoteDataSourceImpl(),
+                                              );
+                                              CarWahserModel washer =
+                                                  await repository.getCarWasher(
+                                                      state.data[index]
+                                                          ['washID']);
+                                              washer.booking.removeWhere(
+                                                  (element) =>
+                                                      element['date'] ==
+                                                          state.data[index]
+                                                              ['date'] &&
+                                                      element['time'] ==
+                                                          state.data[index]
+                                                              ['time']);
+
+                                              await repository
+                                                  .updateCarWasher(washer);
+
                                               var data = state.data;
                                               data.removeAt(index);
                                               SharedPreferences prefs =

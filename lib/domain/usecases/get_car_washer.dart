@@ -11,4 +11,8 @@ class CarWasher {
   Future<List<CarWahserEntity>> getAllCarWashers() async {
     return await carWasherRepository.getCarWashers();
   }
+
+  Future<List<CarWahserEntity>> updateCarWasher() async {
+    return await carWasherRepository.getCarWashers();
+  }
 }

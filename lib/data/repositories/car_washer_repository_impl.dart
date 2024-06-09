@@ -22,4 +22,9 @@ class CarWasherRepositoryImpl implements CarWasherRepository {
     bool isSuccess = await remoteDataSource.createCarWasher(model);
     return isSuccess;
   }
+
+  Future<bool> updateCarWasher(CarWahserModel model) async {
+    bool isSuccess = await remoteDataSource.updateCarWasher(model);
+    return isSuccess;
+  }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:wash_and_go/presentation/screens/create/bloc/create_bloc.dart';
+import 'package:wash_and_go/presentation/screens/edit/bloc/edit_bloc.dart';
 import 'package:wash_and_go/presentation/widgets/buttons/custom_button.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
 
@@ -35,7 +36,7 @@ class YandexMapPicker {
     );
   }
 
-  showModalBottomSheetMap(BuildContext context) {
+  showModalBottomSheetMap(BuildContext context, {bool? isEdit = false}) {
     List res = [];
     showModalBottomSheet(
       enableDrag: false,
@@ -88,9 +89,13 @@ class YandexMapPicker {
                 height: MediaQuery.of(context).size.height / 14,
                 child: CustomButton(
                     function: () {
-                      BlocProvider.of<CreateBloc>(context)
-                        ..add(CreateLocationUpdate(data: res));
-
+                      if (isEdit == false) {
+                        BlocProvider.of<CreateBloc>(context)
+                          ..add(CreateLocationUpdate(data: res));
+                      } else {
+                        BlocProvider.of<EditBloc>(context)
+                          ..add(EditLocationUpdate(data: res));
+                      }
                       Navigator.pop(context);
                     },
                     title: 'Выбрать'),

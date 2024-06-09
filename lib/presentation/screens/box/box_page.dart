@@ -8,7 +8,9 @@ import 'package:intl/intl.dart';
 import 'package:wash_and_go/presentation/screens/box/bloc/box_bloc.dart';
 import 'package:wash_and_go/presentation/screens/box/components/box_comment_card.dart';
 import 'package:wash_and_go/presentation/screens/main_navigator/bloc/main_navigator_bloc.dart';
+import 'package:wash_and_go/presentation/screens/main_navigator/main_navigator.dart';
 import 'package:wash_and_go/presentation/screens/map/bloc/map_bloc.dart';
+import 'package:wash_and_go/presentation/screens/payment/payment_sreen.dart';
 import 'package:wash_and_go/presentation/screens/search/bloc/search_bloc.dart';
 import 'package:wash_and_go/presentation/widgets/buttons/custom_button.dart';
 import 'package:wash_and_go/presentation/widgets/custom_snackbar.dart';
@@ -45,11 +47,11 @@ class BoxScreen extends StatelessWidget {
           child: BlocListener<BoxBloc, BoxState>(
             listener: (context, state) {
               if (state is BoxBookSuccess) {
-                CustomSnackbar()
-                    .showCustomSnackBar(context, 'Успешно забронировано!');
-                Navigator.pop(context);
-                BlocProvider.of<MainNavigatorBloc>(context)
-                    .add(MainNavigatorChangePage(index: 1));
+                // CustomSnackbar()
+                //     .showCustomSnackBar(context, 'Успешно забронировано!');
+                // Navigator.pop(context);
+                // BlocProvider.of<MainNavigatorBloc>(context)
+                //     .add(MainNavigatorChangePage(index: 1));
               }
               if (state is BoxBookBooked) {
                 CustomSnackbar().showCustomSnackBar(
@@ -550,6 +552,18 @@ class BoxScreen extends StatelessWidget {
                                                   ? true
                                                   : false,
                                               function: () {
+                                                Navigator.of(context).push(
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            HomePaymentPage(
+                                                                context2:
+                                                                    context,
+                                                                id: wash.id,
+                                                                price: wash
+                                                                    .prices[state
+                                                                        .type]
+                                                                    .toString())));
+
                                                 BlocProvider.of<BoxBloc>(
                                                     context)
                                                   ..add(BoxBook(id: wash.id));
@@ -663,6 +677,10 @@ class BoxScreen extends StatelessWidget {
                                                                   name:
                                                                       name.text,
                                                                   rate: 1));
+                                                          CustomSnackbar()
+                                                              .showCustomSnackBar(
+                                                                  context,
+                                                                  'Успешно добавлено!');
                                                         } else {
                                                           BlocProvider.of<
                                                                       BoxBloc>(
@@ -676,6 +694,12 @@ class BoxScreen extends StatelessWidget {
                                                                       name.text,
                                                                   rate: state
                                                                       .rate));
+                                                          CustomSnackbar()
+                                                              .showCustomSnackBar(
+                                                                  context,
+                                                                  'Успешно добавлено!');
+                                                          comment.text = '';
+                                                          name.text = '';
                                                         }
                                                       } else {
                                                         CustomSnackbar()

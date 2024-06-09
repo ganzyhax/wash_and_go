@@ -7,5 +7,6 @@ final class StatisticsInitial extends StatisticsState {}
 
 final class StatisticsLoaded extends StatisticsState {
   final data;
-  StatisticsLoaded({required this.data});
+  int index;
+  StatisticsLoaded({required this.data, required this.index});
 }

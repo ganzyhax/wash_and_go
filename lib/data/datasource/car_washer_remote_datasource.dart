@@ -8,6 +8,7 @@ import 'package:wash_and_go/presentation/screens/login/functions/auth.dart';
 
 abstract class CarWasherRemoteDataSource {
   Future<CarWahserModel> getCarWasher(String id);
+  Future<bool> updateCarWasher(CarWahserModel model);
   Future<List<CarWahserModel>> getCarWashers();
   Future<bool> createCarWasher(CarWahserModel carWahserModel);
 }
@@ -32,6 +33,23 @@ class GetCarWasherRemoteDataSourceImpl implements CarWasherRemoteDataSource {
     }).toList();
 
     return washers;
+  }
+
+  Future<bool> updateCarWasher(CarWahserModel model) async {
+    try {
+      final CollectionReference washes =
+          FirebaseFirestore.instance.collection('washes');
+
+      DocumentReference documentRef = washes.doc(model.id);
+
+      await documentRef.set(model
+          .toMap()); // Assuming toMap() converts the CarWahserModel to a Map
+
+      return true;
+    } catch (e) {
+      print('Error updating car washer: $e');
+      return false;
+    }
   }
 
   Future<bool> createCarWasher(CarWahserModel model) async {

@@ -138,6 +138,7 @@ class BoxBloc extends Bloc<BoxEvent, BoxState> {
             'date': strDate,
             'time': strTime,
             'washName': userData['name'],
+            'washID': event.id,
             'type': type.toString(),
           });
 
@@ -250,9 +251,9 @@ class BoxBloc extends Bloc<BoxEvent, BoxState> {
           'star': event.rate.toString(),
           'date': DateTime.now()
         });
-        print(comments);
 
         await documentReference.update({'comments': comments});
+        add(BoxLoad(commentData: comments));
         emit(BoxLoaded(
             date: date,
             isLoading: isLoading,

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,90 +36,185 @@ class StatisticsScreen extends StatelessWidget {
         child: BlocProvider(
           create: (context) => StatisticsBloc()..add(StatisticsLoad()),
           child: BlocBuilder<StatisticsBloc, StatisticsState>(
-            builder: (cont747ext, state) {
+            builder: (context, state) {
               if (state is StatisticsLoaded) {
                 return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: (state.data != null)
-                        ? Column(
-                            children: [
-                              SizedBox(
-                                height: 20,
+                        ? Column(children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Броны',
+                              style: TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.w600),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Center(
+                              child: Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () {
+                                      BlocProvider.of<StatisticsBloc>(context)
+                                        ..add(StatisticsChangeIndex(index: 0));
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          color: (state.index == 0)
+                                              ? Colors.deepPurpleAccent
+                                              : Colors.deepPurpleAccent
+                                                  .withOpacity(0.6),
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      padding: EdgeInsets.only(
+                                          top: 7,
+                                          bottom: 7,
+                                          right: 10,
+                                          left: 10),
+                                      child: Center(
+                                          child: Text(
+                                        'Сегоднишные',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500),
+                                      )),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      BlocProvider.of<StatisticsBloc>(context)
+                                        ..add(StatisticsChangeIndex(index: 1));
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          color: (state.index == 1)
+                                              ? Colors.deepPurpleAccent
+                                              : Colors.deepPurpleAccent
+                                                  .withOpacity(0.6),
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      padding: EdgeInsets.only(
+                                          top: 7,
+                                          bottom: 7,
+                                          right: 10,
+                                          left: 10),
+                                      child: Center(
+                                          child: Text(
+                                        'Все',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500),
+                                      )),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Text(
-                                'Сегодняшние броны',
-                                style: TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.w600),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              (state.data.length != 0)
-                                  ? ListView.builder(
-                                      itemCount: state.data.length,
-                                      shrinkWrap: true,
-                                      physics: NeverScrollableScrollPhysics(),
-                                      itemBuilder: (context, index) {
-                                        return Container(
-                                          margin: EdgeInsets.only(bottom: 15),
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                              color: Colors.white),
-                                          padding: EdgeInsets.all(15),
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Text('Бокс: '),
-                                                  Text(state.data[index]['box'])
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text('Дата: '),
-                                                  Text(
-                                                      state.data[index]['date'])
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text('Время: '),
-                                                  Text(
-                                                      state.data[index]['time'])
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text('Тип: '),
-                                                  Text((state.data[index]
-                                                              ['type'] ==
-                                                          '0'
-                                                      ? 'Седан'
-                                                      : state.data[index]
-                                                                  ['type'] ==
-                                                              '1'
-                                                          ? 'Кроссовер'
-                                                          : 'Пикап'))
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text('Телефон клиента: '),
-                                                  Text('+7' +
-                                                      state.data[index]
-                                                          ['phone'])
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        );
-                                      })
-                                  : Center(
-                                      child: Text('На сегодня нет бронов!'),
-                                    )
-                            ],
-                          )
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Divider(),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            (state.data[0].length != 0 ||
+                                    state.data[1].length != 0)
+                                ? ListView.builder(
+                                    itemCount: (state.index == 0)
+                                        ? state.data[0].length
+                                        : state.data[1].length,
+                                    shrinkWrap: true,
+                                    physics: NeverScrollableScrollPhysics(),
+                                    itemBuilder: (context, index) {
+                                      return Container(
+                                        margin: EdgeInsets.only(bottom: 15),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            color: Colors.white),
+                                        padding: EdgeInsets.all(15),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text('Бокс: '),
+                                                Text((state.index == 0)
+                                                    ? state.data[0][index]
+                                                        ['box']
+                                                    : state.data[1][index]
+                                                        ['box'])
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text('Дата: '),
+                                                Text((state.index == 0)
+                                                    ? state.data[0][index]
+                                                        ['date']
+                                                    : state.data[1][index]
+                                                        ['date'])
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text('Время: '),
+                                                Text((state.index == 0)
+                                                    ? state.data[0][index]
+                                                        ['time']
+                                                    : state.data[1][index]
+                                                        ['time'])
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text('Тип: '),
+                                                Text((state.index == 0)
+                                                    ? (state.data[0][index]
+                                                                ['type'] ==
+                                                            '0'
+                                                        ? 'Седан'
+                                                        : state.data[0][index]
+                                                                    ['type'] ==
+                                                                '1'
+                                                            ? 'Кроссовер'
+                                                            : 'Пикап')
+                                                    : state.data[1][index]
+                                                                ['type'] ==
+                                                            '0'
+                                                        ? 'Седан'
+                                                        : state.data[1][index]
+                                                                    ['type'] ==
+                                                                '1'
+                                                            ? 'Кроссовер'
+                                                            : 'Пикап')
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text('Телефон клиента: '),
+                                                Text((state.index == 0)
+                                                    ? '+7' +
+                                                        state.data[0][index]
+                                                            ['phone']
+                                                    : '+7' +
+                                                        state.data[1][index]
+                                                            ['phone'])
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    })
+                                : Center(
+                                    child: Text('Нет бронов!'),
+                                  )
+                          ])
                         : Center(
                             child: Text('У вас нету мойки, создайте.'),
                           ));

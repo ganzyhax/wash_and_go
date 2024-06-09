@@ -4,3 +4,8 @@ part of 'statistics_bloc.dart';
 sealed class StatisticsEvent {}
 
 class StatisticsLoad extends StatisticsEvent {}
+
+class StatisticsChangeIndex extends StatisticsEvent {
+  int index;
+  StatisticsChangeIndex({required this.index});
+}

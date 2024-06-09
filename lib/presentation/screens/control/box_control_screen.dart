@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:wash_and_go/presentation/screens/control/bloc/control_bloc.dart';
+import 'package:wash_and_go/presentation/screens/edit/edit_screen.dart';
 import 'package:wash_and_go/presentation/widgets/buttons/custom_button.dart';
 import 'package:wash_and_go/presentation/widgets/custom_snackbar.dart';
 
@@ -83,17 +84,28 @@ class BoxControllScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 10,
                                 ),
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Icon(
-                                        Icons.edit,
-                                        color: Colors.grey,
-                                        size: 30,
-                                      )
-                                    ],
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => WashEditScreen(
+                                                id: state.data['id'],
+                                              )),
+                                    );
+                                  },
+                                  child: Align(
+                                    alignment: Alignment.bottomRight,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Icon(
+                                          Icons.edit,
+                                          color: Colors.grey,
+                                          size: 30,
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 )
                               ],
@@ -441,7 +453,7 @@ class BoxControllScreen extends StatelessWidget {
                   ),
                 );
               }
-              return CircularProgressIndicator();
+              return Center(child: CircularProgressIndicator());
             },
           ),
         ),

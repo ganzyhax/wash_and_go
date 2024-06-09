@@ -29,7 +29,7 @@ void main() async {
   prefs.setStringList('location',
       [position.longitude.toString(), position.latitude.toString()]);
 
-  String userId = await prefs.getString('id') ?? '';
+  String userId = prefs.getString('id') ?? '';
   runApp(MyApp(
     userId: userId,
   ));
@@ -60,9 +60,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => LoginBloc()..add(LoginLoad()),
         ),
-        BlocProvider(
-          create: (context) => ControlBloc()..add(ControlLoad()),
-        ),
+
         BlocProvider(
           create: (context) => StatisticsBloc()..add(StatisticsLoad()),
         ),

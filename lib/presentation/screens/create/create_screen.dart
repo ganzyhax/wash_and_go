@@ -8,20 +8,24 @@ import 'package:wash_and_go/presentation/screens/create/components/web_map_pick_
 import 'package:wash_and_go/presentation/widgets/buttons/custom_button.dart';
 import 'package:wash_and_go/presentation/widgets/fields/custom_textfiled.dart';
 
-class WashCreateScreen extends StatelessWidget {
+class WashCreateScreen extends StatefulWidget {
   const WashCreateScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    TextEditingController name = TextEditingController();
-    TextEditingController description = TextEditingController();
-    TextEditingController adress = TextEditingController();
-    TextEditingController phone = TextEditingController();
-    TextEditingController price1 = TextEditingController();
-    TextEditingController price2 = TextEditingController();
-    TextEditingController price3 = TextEditingController();
-    TextEditingController washCount = TextEditingController();
+  State<WashCreateScreen> createState() => _WashCreateScreenState();
+}
 
+class _WashCreateScreenState extends State<WashCreateScreen> {
+  TextEditingController name = TextEditingController();
+  TextEditingController description = TextEditingController();
+  TextEditingController adress = TextEditingController();
+  TextEditingController phone = TextEditingController();
+  TextEditingController price1 = TextEditingController();
+  TextEditingController price2 = TextEditingController();
+  TextEditingController price3 = TextEditingController();
+  TextEditingController washCount = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -247,7 +251,6 @@ class WashCreateScreen extends StatelessWidget {
                     CustomButton(
                         isLoading: state.isLoading,
                         function: () {
-                          print('clieckd');
                           BlocProvider.of<CreateBloc>(context)
                             ..add(CreateFinish(
                                 context: context,

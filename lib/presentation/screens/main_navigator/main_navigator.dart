@@ -146,7 +146,7 @@ class CustomNavigationBar extends StatelessWidget {
                                                             index: 0));
                                               },
                                               child: NavigationItem(
-                                                assetImage: Icons.search,
+                                                assetImage: Icons.location_on,
                                                 isSelected: (state.index == 0)
                                                     ? true
                                                     : false,
@@ -162,7 +162,7 @@ class CustomNavigationBar extends StatelessWidget {
                                                             index: 1));
                                               },
                                               child: NavigationItem(
-                                                assetImage: Icons.add,
+                                                assetImage: Icons.search,
                                                 isSelected: (state.index == 1)
                                                     ? true
                                                     : false,
