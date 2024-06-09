@@ -88,7 +88,7 @@ class CustomNavigationBar extends StatelessWidget {
                                       ),
                                     ),
                                   ]
-                                : (!kIsWeb && state.isCreater == true)
+                                : (kIsWeb && state.isCreater == true)
                                     ? [
                                         InkWell(
                                           onTap: () {
@@ -127,7 +127,7 @@ class CustomNavigationBar extends StatelessWidget {
                                                     index: 2));
                                           },
                                           child: NavigationItem(
-                                            assetImage: Icons.person,
+                                            assetImage: Icons.dashboard,
                                             isSelected: (state.index == 2)
                                                 ? true
                                                 : false,

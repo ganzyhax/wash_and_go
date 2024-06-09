@@ -213,14 +213,24 @@ class StatisticsScreen extends StatelessWidget {
                                     })
                                 : Center(
                                     child: Text('Нет бронов!'),
-                                  )
+                                  ),
+                            SizedBox(
+                              height: (kIsWeb) ? 140 : 20,
+                            )
                           ])
                         : Center(
                             child: Text('У вас нету мойки, создайте.'),
                           ));
               }
-              return Center(
-                child: CircularProgressIndicator(),
+              return Column(
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 2.5,
+                  ),
+                  Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ],
               );
             },
           ),

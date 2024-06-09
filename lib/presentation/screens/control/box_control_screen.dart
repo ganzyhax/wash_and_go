@@ -17,7 +17,7 @@ class BoxControllScreen extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            Text('Брон боксов'),
+            Text('Бронирование боксов'),
           ],
         ),
       ),
@@ -445,7 +445,10 @@ class BoxControllScreen extends StatelessWidget {
                                   BlocProvider.of<ControlBloc>(context)
                                     ..add(ControlBook(id: state.data['id']));
                                 },
-                                title: 'Забронировать')
+                                title: 'Забронировать'),
+                            SizedBox(
+                              height: (kIsWeb) ? 130 : 40,
+                            ),
                           ],
                         ),
                       ),

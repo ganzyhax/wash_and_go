@@ -571,7 +571,7 @@ class BoxScreen extends StatelessWidget {
                                               title: 'Забронировать')
                                           : SizedBox(),
                                       SizedBox(
-                                        height: 20,
+                                        height: (kIsWeb) ? 150 : 20,
                                       ),
                                     ],
                                   )

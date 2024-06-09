@@ -319,7 +319,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             );
                           }),
                       SizedBox(
-                        height: 50,
+                        height: (kIsWeb) ? 120 : 50,
                       )
                     ],
                   ),
