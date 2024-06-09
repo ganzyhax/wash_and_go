@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wash_and_go/firebase_options.dart';
-import 'package:wash_and_go/presentation/screens/control/bloc/control_bloc.dart';
 import 'package:wash_and_go/presentation/screens/create/bloc/create_bloc.dart';
-import 'package:wash_and_go/presentation/screens/login/bloc/login_bloc.dart';
 import 'package:wash_and_go/presentation/screens/login/login_screen.dart';
 import 'package:wash_and_go/presentation/screens/main_navigator/bloc/main_navigator_bloc.dart';
 import 'package:wash_and_go/presentation/screens/main_navigator/main_navigator.dart';
@@ -56,9 +54,6 @@ class MyApp extends StatelessWidget {
         // ),
         BlocProvider(
           create: (context) => SearchBloc()..add(SearchLoad()),
-        ),
-        BlocProvider(
-          create: (context) => LoginBloc()..add(LoginLoad()),
         ),
 
         BlocProvider(

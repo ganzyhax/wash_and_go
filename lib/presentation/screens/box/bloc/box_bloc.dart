@@ -33,7 +33,7 @@ class BoxBloc extends Bloc<BoxEvent, BoxState> {
         lastBox = '';
         comments = event.commentData;
         SharedPreferences prefs = await SharedPreferences.getInstance();
-        isAvailable = await prefs.getBool('isCreater') ?? true;
+        isAvailable = prefs.getBool('isCreater') ?? true;
         emit(BoxLoaded(
             isLoading: isLoading,
             isAvailable: isAvailable,

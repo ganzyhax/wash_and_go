@@ -69,7 +69,7 @@ class CustomNavigationBar extends StatelessWidget {
                                                 index: 1));
                                       },
                                       child: NavigationItem(
-                                        assetImage: Icons.add,
+                                        assetImage: Icons.local_car_wash,
                                         isSelected:
                                             (state.index == 1) ? true : false,
                                       ),
