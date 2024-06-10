@@ -148,7 +148,7 @@ class BoxBloc extends Bloc<BoxEvent, BoxState> {
             'box': (lastBox + 1).toString(),
             'date': strDate,
             'time': strTime,
-            'id': '123123',
+            'id': event.id,
             'phone': userPhone,
             'type': type.toString()
           };

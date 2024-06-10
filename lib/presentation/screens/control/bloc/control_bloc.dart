@@ -139,6 +139,7 @@ class ControlBloc extends Bloc<ControlEvent, ControlState> {
             'date': strDate,
             'time': strTime,
             'id': 'Admin',
+            'washID': event.id,
             'type': type.toString()
           };
           List bookings = userData['booking'];

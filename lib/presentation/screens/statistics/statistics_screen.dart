@@ -76,7 +76,7 @@ class StatisticsScreen extends StatelessWidget {
                                           left: 10),
                                       child: Center(
                                           child: Text(
-                                        'Сегоднишные',
+                                        'Сегодняшний',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w500),
@@ -123,8 +123,7 @@ class StatisticsScreen extends StatelessWidget {
                             SizedBox(
                               height: 15,
                             ),
-                            (state.data[0].length != 0 ||
-                                    state.data[1].length != 0)
+                            (state.data[state.index].length != 0)
                                 ? ListView.builder(
                                     itemCount: (state.index == 0)
                                         ? state.data[0].length
@@ -199,12 +198,8 @@ class StatisticsScreen extends StatelessWidget {
                                               children: [
                                                 Text('Телефон клиента: '),
                                                 Text((state.index == 0)
-                                                    ? '+7' +
-                                                        state.data[0][index]
-                                                            ['phone']
-                                                    : '+7' +
-                                                        state.data[1][index]
-                                                            ['phone'])
+                                                    ? '${state.data[0][index]['phone'] ?? 'Админ'}'
+                                                    : '${state.data[1][index]['phone'] ?? 'Админ'}')
                                               ],
                                             ),
                                           ],

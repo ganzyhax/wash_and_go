@@ -373,8 +373,7 @@ class BoxControllScreen extends StatelessWidget {
                                           '-' +
                                           format.format(nextHour);
                                   bool isBooked = false;
-                                  print(state.strDate);
-                                  print(timeRange);
+
                                   print((state.box + 1).toString());
                                   for (var i = 0;
                                       i < state.data['booking'].length;
